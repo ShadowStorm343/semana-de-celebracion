@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas de Celebración 💌</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos bonitos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="cartas.css">
+</head>
+<body>
+    <!-- Efectos decorativos de fondo -->
+    <div class="decorations">
+        <div class="heart h1"></div>
+        <div class="heart h2"></div>
+        <div class="heart h3"></div>
+        <div class="sparkle s1">✨</div>
+        <div class="sparkle s2">🌸</div>
+        <div class="sparkle s3">💖</div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="main-header">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+        <h1>Cartas de Celebración</h1>
+        <p class="subtitle">🌟Haz clic en cada sobre para abrir una sorpresa especial 🌟</p>
+    </header>
+
+    <!-- Contenedor de Cartas / Sobres -->
+    <main class="letters-grid">
+        <!-- Sobre 1 -->
+        <div class="envelope-card" data-letter="1">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter-preview">
+                        <div class="words line-1"></div>
+                        <div class="words line-2"></div>
+                    </div>
+                    <div class="hearts-particles"></div>
+                </div>
+            </div>
+            <div class="envelope-info">
+                <h3>🌻Lunes de Celebración🌻</h3>
+                <p>Una dedicatoria para la próxima cumpleañera</p>
+            </div>
+        </div>
+
+        <!-- Sobre 2 
+        <div class="envelope-card" data-letter="2">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter-preview">
+                        <div class="words line-1"></div>
+                        <div class="words line-2"></div>
+                    </div>
+                    <div class="hearts-particles"></div>
+                </div>
+            </div>
+            <div class="envelope-info">
+                <h3>✨ Momentos Juntos</h3>
+                <p>Un pequeño recuerdo lindo</p>
+            </div>
+        </div>
+
+        <!-- Sobre 3
+        <div class="envelope-card" data-letter="3">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter-preview">
+                        <div class="words line-1"></div>
+                        <div class="words line-2"></div>
+                    </div>
+                    <div class="hearts-particles"></div>
+                </div>
+            </div>
+            <div class="envelope-info">
+                <h3>🎁 Deseos Especiales</h3>
+                <p>Para esta semana mágica</p>
+            </div>
+        </div>
+    </main> -->
+
+    <!-- Modal para mostrar el contenido de la carta con animación premium -->
+    <div class="modal" id="letter-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal-btn">&times;</button>
+            <div class="letter-paper">
+                <div class="letter-header">
+                    <span class="decor-stamp">💝</span>
+                    <h2 id="modal-letter-title">Mi Amor</h2>
+                </div>
+                <div class="letter-body" id="modal-letter-body">
+                    <!-- El texto de la carta se insertará con JS -->
+                </div>
+                <div class="letter-footer">
+                    <p class="signature">Siempre tuyo ✨</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="bg-music" src="Majora's Mask Astral Observatory Music.MP3" loop></audio>
+
+    <!-- Botón flotante para controlar la música -->
+    <button class="music-toggle-btn" id="music-toggle" title="Reproducir/Pausar música">
+        <i class="fa-solid fa-music"></i>
+        <div class="music-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <script src="cartas.js"></script>
+</body>
+</html>

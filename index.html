@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana de Celebración Especial 🌸</title>
+    <!-- Google Fonts para tipografía premium y tierna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos bonitos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Efectos decorativos de fondo -->
+    <div class="decorations">
+        <div class="heart h1"></div>
+        <div class="heart h2"></div>
+        <div class="heart h3"></div>
+        <div class="sparkle s1">✨</div>
+        <div class="sparkle s2">✨</div>
+        <div class="sparkle s3">🌸</div>
+        <div class="sparkle s4">🌸</div>
+    </div>
+
+    <!-- Contenedor Principal con Glassmorphism -->
+    <main class="lock-container">
+        <header class="lock-header">
+            <div class="avatar-container">
+                <div class="avatar-ring"></div>
+                <div class="avatar-icon">💝</div>
+            </div>
+            <h1>Bienvenida</h1>
+            <p class="subtitle">Ingresa la clave secreta para continuar</p>
+        </header>
+
+        <!-- Indicador de dígitos (Estilo iOS) -->
+        <div class="passcode-dots" id="passcode-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Mensaje de error/ayuda con animación suave -->
+        <div class="message-banner" id="message-banner">
+            <i class="fa-solid fa-sparkles"></i> Pista: Una fecha o número especial
+        </div>
+
+        <!-- Teclado Numérico Personalizado -->
+        <div class="keypad">
+            <button class="key-btn" data-value="1">1</button>
+            <button class="key-btn" data-value="2">2</button>
+            <button class="key-btn" data-value="3">3</button>
+            <button class="key-btn" data-value="4">4</button>
+            <button class="key-btn" data-value="5">5</button>
+            <button class="key-btn" data-value="6">6</button>
+            <button class="key-btn" data-value="7">7</button>
+            <button class="key-btn" data-value="8">8</button>
+            <button class="key-btn" data-value="9">9</button>
+            <button class="key-btn action-btn delete-btn" id="btn-delete" title="Borrar">
+                <i class="fa-solid fa-backspace"></i>
+            </button>
+            <button class="key-btn" data-value="0">0</button>
+            <button class="key-btn action-btn enter-btn" id="btn-enter" title="Entrar">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Hecho con mucho cariño para mi mujer preciosa❤️</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
