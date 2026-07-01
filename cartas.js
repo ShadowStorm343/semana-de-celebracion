@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '2': {
             title: 'Nuestros Momentos ✨',
             date: 'Un dulce recuerdo',
-            body: '<p>Cada momento que pasamos juntos es como una escena de nuestra propia historia mágica. Me encanta recordar nuestras risas, nuestras conversaciones largas y la forma tan linda en la que nos complementamos.</p><p>Agradezco a la vida cada segundo a tu lado y prometo seguir creando recuerdos hermosos que guardaremos para siempre en el corazón. Eres mi lugar favorito en el mundo entero. 🧸✨</p>'
+            body: '<p>Cada momento que pasamos juntos es como una escena de nuestra propia historia mágica. Me encanta recordar nuestras risas, nuestras conversaciones largas y la forma tan linda en la que nos complementamos.</p><p>Agradezco a la vida cada segundo a tu lado y juro seguir creando recuerdos hermosos que guardaremos para siempre en el corazón. Eres mi lugar favorito en el mundo entero. 🧸✨</p>Hoy, martes, espero hayas tenido un estupendo trabajo, y te haya ido bien en la universidad. Te quiero, corazón de melón, ya falta poco para la gran sorpresa. Eres la luz del sol que ilumina mis días, y la luz de la luna y las estrellas que ilumina mis nocheso❤️<p class="bible-quote">Rut 1:16: "¡No insistas en que te abandone o en que me separe de ti! Porque iré adonde tú vayas, y viviré donde tú vivas. Tu pueblo será mi pueblo, y tu Dios será mi Dios".</p>'
         },
         '3': {
             title: 'Mis Deseos Para Ti 🎁',
