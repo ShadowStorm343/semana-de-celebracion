@@ -9,12 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
         '2': {
             title: 'Nuestros Momentos ✨',
             date: 'Un dulce recuerdo',
-            body: '<p>Cada momento que pasamos juntos es como una escena de nuestra propia historia mágica. Me encanta recordar nuestras risas, nuestras conversaciones largas y la forma tan linda en la que nos complementamos.</p><p>Agradezco a la vida cada segundo a tu lado y juro seguir creando recuerdos hermosos que guardaremos para siempre en el corazón. Eres mi lugar favorito en el mundo entero. 🧸✨</p>Hoy, martes, espero hayas tenido un estupendo trabajo, y te haya ido bien en la universidad. Te quiero, corazón de melón, ya falta poco para la gran sorpresa. Eres la luz del sol que ilumina mis días, y la luz de la luna y las estrellas que ilumina mis nocheso❤️<p class="bible-quote">Rut 1:16: "¡No insistas en que te abandone o en que me separe de ti! Porque iré adonde tú vayas, y viviré donde tú vivas. Tu pueblo será mi pueblo, y tu Dios será mi Dios".</p>'
+            body: '<p>Cada momento que pasamos juntos es como una escena de nuestra propia historia mágica. Me encanta recordar nuestras risas, nuestras conversaciones largas y la forma tan linda en la que nos complementamos.</p><p>Agradezco a la vida cada segundo a tu lado y juro seguir creando recuerdos hermosos que guardaremos para siempre en el corazón. Eres mi lugar favorito en el mundo entero. 🧸✨</p>Hoy, martes, espero hayas tenido un estupendo trabajo, y te haya ido bien en la universidad. Te quiero, corazón de melón, ya falta poco para la gran sorpresa. Eres la luz del sol que ilumina mis días, y la luz de la luna y las estrellas que ilumina mis noches❤️<p class="bible-quote">Rut 1:16: "¡No insistas en que te abandone o en que me separe de ti! Porque iré adonde tú vayas, y viviré donde tú vivas. Tu pueblo será mi pueblo, y tu Dios será mi Dios".</p>'
         },
         '3': {
-            title: 'Mis Deseos Para Ti 🎁',
+            title: 'La emoción y la expectación🤩⌛',
             date: 'Con todo mi corazón',
-            body: '<p>En esta semana tan especial, mi mayor deseo es que seas inmensamente feliz. Que se cumplan todos tus sueños y que tu corazón se llene de paz y alegría.</p><p>Quiero estar a tu lado para celebrar cada uno de tus logros y apoyarte en cada paso que des. Que la vida te sonría siempre tanto como tú me haces sonreír a mí.</p><p>¡Que empiece la celebración! Eres maravillosa. 💕🌸</p>'
+            body: '<p>Mi vidaa, mi reina, mi muñeca hermosa, divina y preciosa. Hoy, en este miércoles, estoy taaan emocionado, tan feliz por tí, pues se acerca cada vez más tu cumpleañosss. El gran día se acerca ya mi reina ¡Se acerca! Mi corazón no deja de latir con una mezcla de alegría y emoción desmedida.</p><p>Eres mi niña bonita, la chica de mis sueños, y la gran cumpleañera. Te quiero corazóncito de melón hermosa. Te felicito por todo lo que has logrado, mi súperestrella✨. Cada hora que pasa me llena de expectación, porque sé que pronto podré verte brillar como la estrella que eres.💕🌸<p class="bible-quote">Salmos 20:4: "Que te conceda lo que tu corazón desea; que haga que se cumplan todos tus planes".</p>'
+        },
+
+        //'3': {
+        //    title: 'Mis Deseos Para Ti 🎁',
+        //    date: 'Con todo mi corazón',
+        //    body: '<p>En esta semana tan especial, mi mayor deseo es que seas inmensamente feliz. Que se cumplan todos tus sueños y que tu corazón se llene de paz y alegría.</p><p>Quiero estar a tu lado para celebrar cada uno de tus logros y apoyarte en cada paso que des. Que la vida te sonría siempre tanto como tú me haces sonreír a mí.</p><p>¡Que empiece la celebración! Eres maravillosa. 💕🌸</p>'
+        //},
+
+        '4': {
+            title: 'El Brillo de tus Ojos ✨',
+            date: 'Un suspiro de amor',
+            body: '<p>Mi amor precioso, hoy jueves quiero recordarte lo increíble que eres y cómo tu sola presencia transforma mi vida. Tienes una magia especial en la mirada, una chispa que ilumina mis peores días y me da la fuerza que necesito.</p><p>Me siento tan afortunado de tener a la chica más hermosa de todo el Perú a mi lado. Eres inteligente, dedicada en tu trabajo y en la universidad, y tu determinación me inspira cada día más.</p><p>Ya estamos a nada de tu gran día especial y mi corazón late de emoción por todo lo que te espera. Te amo muchísimo, corazón de melón. 💕</p><p class="bible-quote">Cantares 4:7: "Toda tú eres hermosa, amiga mía, y en ti no hay mancha".</p>'
+        },
+        '5': {
+            title: 'La Víspera de tu Día 🌟',
+            date: '¡Mañana es el gran día!',
+            body: '<p>¡Llegó el viernes de expectación, mi reina! Mañana es tu cumpleaños, el 4 de julio, y no puedo contener la emoción de celebrar tu vida.</p><p>Quiero que sepas que me siento inmensamente orgulloso de ti. Eres la persona más maravillosa que conozco. Que este nuevo año de vida que estás por comenzar esté colmado de risas, éxitos en tu universidad, paz y muchísimo amor. Prometo estar siempre a tu lado para cuidarte, apoyarte y hacerte la mujer más feliz del mundo.</p><p>Prepárate, porque la sorpresa final está lista... ¡Es hora de celebrar en grande! Eres mi todo. ❤️✨</p><p class="bible-quote">Números 6:24-26: "Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz".</p>'
         }
     };
 
@@ -55,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.addEventListener('click', initAudio);
 
-    // Reducir el volumen al 50%
+    // Reducir el volumen al 15% para que sea suave de fondo
     if (bgMusic) {
-        bgMusic.volume = 0.5;
+        bgMusic.volume = 0.25;
     }
 
     // Botón flotante para pausar/reproducir

@@ -1,0 +1,831 @@
+/* --- VARIABLES Y DISEÑO CORE --- */
+:root {
+    --pink-pastel: #ffe5ec;
+    --pink-primary: #ffb3c1;
+    --pink-dark: #ff85a1;
+    --pink-glow: rgba(255, 133, 161, 0.4);
+    
+    --text-light: #ffffff;
+    --text-muted: #dbcadb;
+    --text-dark: #4a2f35;
+    
+    --glass-background: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+    
+    --font-primary: 'Outfit', sans-serif;
+    --font-fancy: 'Pacifico', cursive;
+}
+
+/* --- REINICIO Y CONFIGURACIÓN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, #070512 0%, #120a24 45%, #231238 75%, #3c193b 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-light);
+    position: relative;
+    overflow-x: hidden;
+    padding: 2rem 1rem;
+}
+
+/* --- CIELO ESTRELLADO ANIME --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1.5px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    opacity: 0.45;
+    z-index: 1;
+    pointer-events: none;
+    animation: starsTwinkle 6s infinite alternate ease-in-out;
+}
+
+@keyframes starsTwinkle {
+    0% { opacity: 0.25; }
+    50% { opacity: 0.65; }
+    100% { opacity: 0.35; }
+}
+
+/* --- DECORACIONES DE FONDO --- */
+.decorations {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    background-color: var(--pink-dark);
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    transform: rotate(-45deg);
+    width: 30px;
+    opacity: 0.08;
+    animation: floatUp 15s infinite ease-in-out;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: var(--pink-dark);
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before { top: -15px; left: 0; }
+.heart:after { left: 15px; top: 0; }
+
+.h1 { left: 8%; width: 25px; height: 25px; animation-duration: 14s; }
+.h1:before, .h1:after { width: 25px; height: 25px; }
+.h1:before { top: -12px; }
+.h1:after { left: 12px; }
+
+.h2 { left: 80%; width: 45px; height: 45px; animation-duration: 18s; animation-delay: 2s; }
+.h2:before, .h2:after { width: 45px; height: 45px; }
+.h2:before { top: -22px; }
+.h2:after { left: 22px; }
+
+.h3 { left: 50%; width: 20px; height: 20px; animation-duration: 12s; animation-delay: 4s; }
+.h3:before, .h3:after { width: 20px; height: 20px; }
+.h3:before { top: -10px; }
+.h3:after { left: 10px; }
+
+.sparkle {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.15;
+    animation: pulseSparkle 4s infinite alternate;
+}
+
+.s1 { top: 15%; left: 25%; animation-delay: 0s; }
+.s2 { top: 60%; left: 75%; animation-delay: 1.5s; font-size: 2rem; }
+.s3 { top: 40%; right: 20%; animation-delay: 0.8s; }
+.s4 { top: 75%; left: 30%; animation-delay: 2s; }
+
+/* --- CABECERA --- */
+.birthday-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative;
+    padding-top: 1rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.back-link:hover {
+    background: rgba(255, 133, 161, 0.2);
+    color: white;
+    border-color: var(--pink-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 133, 161, 0.2);
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.birthday-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    flex-grow: 1;
+}
+
+/* --- ESCENARIO INTERACTIVO (PASTEL) --- */
+.interactive-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.8s ease;
+}
+
+.interactive-stage.fade-out {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+    pointer-events: none;
+    position: absolute;
+}
+
+.instruction-banner {
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--pink-pastel);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: bounceText 2s infinite ease-in-out;
+}
+
+@keyframes bounceText {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* --- PASTEL DE CUMPLEAÑOS CSS --- */
+.cake-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.cake {
+    position: relative;
+    width: 200px;
+    height: 160px;
+    transition: transform 0.3s ease;
+}
+
+.cake:hover {
+    transform: scale(1.03);
+}
+
+.plate {
+    position: absolute;
+    bottom: -10px;
+    left: -20px;
+    width: 240px;
+    height: 20px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    box-shadow: 0 8px 0 #cbd5e1, 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.layer {
+    position: absolute;
+    width: 200px;
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
+}
+
+.layer-bottom {
+    bottom: 0;
+    height: 60px;
+    background: #8b5a2b; /* Capa chocolate */
+    box-shadow: inset 0 -10px 0 rgba(0,0,0,0.1);
+}
+
+.layer-middle {
+    bottom: 40px;
+    height: 60px;
+    background: #ffb3c1; /* Capa fresa */
+    width: 190px;
+    left: 5px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: inset 0 -10px 0 rgba(0,0,0,0.05);
+}
+
+.layer-top {
+    bottom: 80px;
+    height: 50px;
+    background: #ffe5ec; /* Crema vainilla */
+    width: 180px;
+    left: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.icing {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 180px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+/* Drips de crema */
+.drip {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.drip1 { top: 40px; left: 25px; width: 15px; height: 20px; }
+.drip2 { top: 40px; left: 85px; width: 12px; height: 16px; }
+.drip3 { top: 40px; left: 145px; width: 16px; height: 22px; }
+
+/* Velas */
+.candles-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 4;
+}
+
+.candle {
+    position: relative;
+    width: 8px;
+    height: 35px;
+    background: linear-gradient(to right, #ff85a1, #ffe5ec);
+    border-radius: 4px;
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 3px;
+    width: 2px;
+    height: 5px;
+    background: #333;
+}
+
+/* Llama animada */
+.flame {
+    position: absolute;
+    top: -18px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle, #ffe600 20%, #ff5d00 70%, transparent 100%);
+    border-radius: 50% 50% 20% 50%;
+    transform: rotate(-45deg);
+    animation: flameWobble 0.6s infinite alternate ease-in-out;
+    box-shadow: 0 0 12px rgba(255, 120, 0, 0.8);
+}
+
+@keyframes flameWobble {
+    0% {
+        transform: rotate(-45deg) scale(0.9) skew(3deg, 3deg);
+    }
+    100% {
+        transform: rotate(-45deg) scale(1.1) skew(-3deg, -3deg);
+    }
+}
+
+/* Apagar vela */
+.candle.blown-out .flame {
+    display: none;
+}
+
+.candle.blown-out::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 2px;
+    width: 4px;
+    height: 12px;
+    background: rgba(255,255,255,0.4);
+    filter: blur(1px);
+    border-radius: 50%;
+    animation: smokeFade 1.2s forwards ease-out;
+}
+
+@keyframes smokeFade {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-10px) scale(1.5); opacity: 0; }
+}
+
+
+/* --- TARJETA DE CUMPLEAÑOS 3D FLIP --- */
+.birthday-card {
+    width: 90vw;
+    max-width: 520px;
+    height: 580px;
+    perspective: 1500px;
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 10;
+}
+
+.birthday-card.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Cuando se añade la clase flipped, se da la vuelta */
+.birthday-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Frente de la tarjeta (Tipo sobre elegante) */
+.card-front {
+    background: linear-gradient(135deg, #2c163f 0%, #150921 100%);
+    border: 2px solid rgba(255, 133, 161, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.envelope-seal {
+    font-size: 5rem;
+    animation: heartbeat 1.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 15px rgba(255, 133, 161, 0.5));
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.card-front h2 {
+    font-family: var(--font-fancy);
+    font-size: 2.2rem;
+    color: var(--pink-pastel);
+    text-shadow: 0 0 10px rgba(255, 133, 161, 0.4);
+}
+
+.card-front p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.card-front:hover p {
+    background: rgba(255, 133, 161, 0.15);
+    color: white;
+    border-color: var(--pink-primary);
+}
+
+/* Reverso de la tarjeta (Carta real escrita) */
+.card-back {
+    background: #fffdfd;
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-paper {
+    background: #fff;
+    border: 1px solid rgba(255, 133, 161, 0.15);
+    padding: 1.5rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: inset 0 0 40px rgba(255, 209, 220, 0.06);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+    width: 2px;
+    background: rgba(255, 133, 161, 0.18);
+}
+
+.letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed rgba(255, 133, 161, 0.2);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.letter-header h2 {
+    font-family: var(--font-fancy);
+    font-size: 1.6rem;
+    color: #945362;
+    text-align: center;
+}
+
+.decor-stamp {
+    font-size: 1.5rem;
+}
+
+.letter-body {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    padding-left: 1.8rem;
+    padding-right: 0.4rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.letter-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.letter-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.letter-body::-webkit-scrollbar-thumb {
+    background: var(--pink-pastel);
+    border-radius: 3px;
+}
+
+.letter-body p {
+    margin-bottom: 1rem;
+}
+
+.letter-body .greeting {
+    font-weight: 600;
+    color: #a25c6d;
+    font-size: 1rem;
+}
+
+.letter-body .final-love {
+    font-family: var(--font-fancy);
+    font-size: 1.2rem;
+    color: var(--pink-dark);
+    text-align: center;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.letter-footer {
+    border-top: 1px solid rgba(255, 133, 161, 0.12);
+    padding-top: 0.8rem;
+    text-align: right;
+}
+
+.signature {
+    font-family: var(--font-fancy);
+    font-size: 1.3rem;
+    color: var(--pink-dark);
+}
+
+/* --- BOTÓN DE MÚSICA FLOTANTE --- */
+.music-toggle-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--pink-primary);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 150;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+    padding-top: 4px;
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 133, 161, 0.15);
+    border-color: var(--pink-primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 133, 161, 0.2);
+}
+
+.music-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.music-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.music-toggle-btn.playing i {
+    animation: rotateIcon 5s linear infinite;
+}
+
+.music-waves {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    align-items: flex-end;
+    height: 10px;
+    margin-top: 4px;
+}
+
+.music-waves span {
+    width: 2px;
+    height: 2px;
+    background-color: var(--pink-primary);
+    border-radius: 1px;
+}
+
+.music-toggle-btn.playing .music-waves span {
+    animation: bounceWave 0.8s ease-in-out infinite alternate;
+}
+
+.music-toggle-btn.playing .music-waves span:nth-child(1) { animation-delay: 0.1s; }
+.music-toggle-btn.playing .music-waves span:nth-child(2) { animation-delay: 0.3s; }
+.music-toggle-btn.playing .music-waves span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bounceWave {
+    0% { height: 2px; }
+    100% { height: 10px; }
+}
+
+/* --- FOOTER --- */
+.footer {
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    z-index: 10;
+    font-weight: 300;
+    text-align: center;
+    padding: 1.5rem 0 0.5rem;
+}
+
+/* --- ANIMACIÓN FLOTAR CORAZONES --- */
+@keyframes floatUp {
+    0% {
+        transform: translateY(105vh) rotate(-45deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.08; }
+    90% { opacity: 0.08; }
+    100% {
+        transform: translateY(-20vh) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseSparkle {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.15;
+    }
+    100% {
+        transform: scale(1.2) rotate(15deg);
+        opacity: 0.35;
+    }
+}
+
+/* --- EFECTO EXPLOSIÓN CONFETI CORAZONES --- */
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+    animation: explodeParticles 1.4s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes explodeParticles {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* --- OPTIMIZACIÓN MÓVIL --- */
+@media (max-width: 450px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    body::before {
+        animation: none; /* Mejorar FPS en celulares */
+    }
+
+    .decorations {
+        display: none;
+    }
+
+    .birthday-header {
+        margin-bottom: 1.2rem;
+    }
+
+    .back-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .instruction-banner {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+        max-width: 90%;
+    }
+
+    .cake-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cake {
+        width: 160px;
+        height: 130px;
+    }
+
+    .plate {
+        width: 200px;
+        left: -20px;
+    }
+
+    .layer-bottom { height: 50px; }
+    .layer-middle { height: 50px; bottom: 30px; width: 152px; left: 4px; }
+    .layer-top { height: 40px; bottom: 65px; width: 144px; left: 8px; }
+    .icing { top: 25px; left: 8px; width: 144px; height: 10px; }
+    .drip1 { top: 32px; left: 20px; width: 12px; height: 15px; }
+    .drip2 { top: 32px; left: 70px; width: 10px; height: 12px; }
+    .drip3 { top: 32px; left: 110px; width: 12px; height: 18px; }
+    
+    .candles-wrapper {
+        gap: 20px;
+    }
+    
+    .candle {
+        width: 6px;
+        height: 28px;
+    }
+    
+    .flame {
+        top: -15px;
+        left: -5px;
+        width: 13px;
+        height: 13px;
+    }
+
+    .birthday-card {
+        height: 520px;
+        max-width: 94%;
+    }
+
+    .card-front h2 {
+        font-size: 1.7rem;
+    }
+
+    .envelope-seal {
+        font-size: 4rem;
+    }
+
+    .letter-paper {
+        padding: 1.2rem 0.6rem;
+    }
+
+    .letter-paper::before {
+        left: 1.5rem;
+    }
+
+    .letter-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .letter-body {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-left: 1.2rem;
+        padding-right: 0.2rem;
+    }
+
+    .letter-body .final-love {
+        font-size: 1.1rem;
+    }
+
+    .signature {
+        font-size: 1.15rem;
+    }
+
+    .music-toggle-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+
+    .music-waves {
+        height: 8px;
+    }
+}

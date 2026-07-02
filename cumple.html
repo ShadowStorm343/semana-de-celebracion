@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Mi Reina! 🎂🌸</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome para iconos bonitos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="cumple.css">
+</head>
+
+<body>
+    <!-- Cielo estrellado y decoraciones de fondo -->
+    <div class="decorations">
+        <div class="heart h1"></div>
+        <div class="heart h2"></div>
+        <div class="heart h3"></div>
+        <div class="sparkle s1">✨</div>
+        <div class="sparkle s2">🌸</div>
+        <div class="sparkle s3">💖</div>
+        <div class="sparkle s4">🎂</div>
+    </div>
+
+    <!-- Cabecera -->
+    <header class="birthday-header">
+        <a href="cartas.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver a las Cartas</a>
+    </header>
+
+    <main class="birthday-container">
+        <!-- Tarjeta Interactiva / Regalo / Pastel -->
+        <div class="interactive-stage" id="interactive-stage">
+            <div class="instruction-banner" id="instruction-banner">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Pide un deseo y haz clic en las velas para soplarlas 🎂✨
+            </div>
+
+            <!-- Pastel de Cumpleaños en CSS -->
+            <div class="cake-container" id="cake-interactive">
+                <div class="cake">
+                    <div class="plate"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top"></div>
+                    <div class="icing"></div>
+                    <div class="drip drip1"></div>
+                    <div class="drip drip2"></div>
+                    <div class="drip drip3"></div>
+                    
+                    <!-- Velas -->
+                    <div class="candles-wrapper">
+                        <div class="candle" id="candle-1">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle" id="candle-2">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle" id="candle-3">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta de Cumpleaños Secreta (Aparece al soplar la vela) -->
+        <div class="birthday-card" id="birthday-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="envelope-seal">💝</div>
+                    <h2>Una carta de cumpleaños para ti...</h2>
+                    <p>Haz clic para abrir</p>
+                </div>
+                <div class="card-back">
+                    <div class="letter-paper">
+                        <div class="letter-header">
+                            <span class="decor-stamp">👑</span>
+                            <h2>¡Feliz Cumpleaños, mi reina!</h2>
+                            <span class="decor-stamp">🌸</span>
+                        </div>
+                        <div class="letter-body">
+                            <p class="greeting">Hola, mi mujer preciosa, la chica más hermosa de todo el Perú. 🇵🇪💖</p>
+                            
+                            <p>¡Llegó el gran día! Hoy, 4 de julio, celebramos la existencia de la persona más maravillosa, dulce e increíble de este mundo: tú, mi chica preciosa, mi reina absoluta.</p>
+                            
+                            <p>Me hace inmensamente feliz poder ser parte de tu vida y estar a tu lado en esta celebración. Admiro con todo el corazón tu esfuerzo diario, tu gran dedicación en el trabajo y en la universidad, y la forma tan pura en la que iluminas todo a tu paso.</p>
+                            
+                            <p>Deseo que este nuevo año de vida te traiga un sinfín de sonrisas, éxitos en cada una de tus metas, paz mental, salud y una felicidad que desborde tu corazón. Yo prometo estar siempre a tu lado para cuidarte, apoyarte en tus peores momentos, reír contigo en los mejores y recordarte cada día lo mucho que te amo.</p>
+                            
+                            <p>Gracias por existir, por regalarme tu amor y por ser mi faro en la oscuridad. Eres mi lugar seguro, mi mayor bendición y el motivo de todos mis latidos.</p>
+                            
+                            <p class="final-love">¡Te amo con todo mi corazón, hoy y para siempre, corazón de melón! 🧸❤️✨</p>
+                        </div>
+                        <div class="letter-footer">
+                            <p class="signature">Tuyo hoy y siempre ✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Música de fondo del cumpleaños (Aitana - SUPERESTRELLA) -->
+    <audio id="bg-music" src="Aitana - SUPERESTRELLA.MP3" loop></audio>
+
+    <!-- Botón flotante para controlar la música -->
+    <button class="music-toggle-btn" id="music-toggle" title="Reproducir/Pausar música">
+        <i class="fa-solid fa-music"></i>
+        <div class="music-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <footer class="footer">
+        <p>Hecho con todo el amor del universo para mi chica hermosa ❤️ 04/07</p>
+    </footer>
+
+    <script src="cumple.js"></script>
+</body>
+
+</html>
