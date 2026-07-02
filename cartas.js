@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Rellenar contenido del modal
                 modalTitle.textContent = data.title;
                 modalBody.innerHTML = data.body;
-                
+
                 // Mostrar modal con un pequeño delay para que se aprecie la animación del sobre
                 setTimeout(() => {
                     modal.classList.add('active');
@@ -129,26 +129,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
             heart.innerHTML = ['❤️', '💖', '🌸', '✨', '💝'][Math.floor(Math.random() * 5)];
-            
+
             // Posición aleatoria desde el centro
             heart.style.left = '50%';
             heart.style.top = '50%';
-            
+
             // Ángulo y distancia aleatoria para la explosión
             const angle = Math.random() * Math.PI * 2;
             const velocity = 50 + Math.random() * 100;
             const x = Math.cos(angle) * velocity;
             const y = Math.sin(angle) * velocity;
-            
+
             heart.style.setProperty('--x', `${x}px`);
             heart.style.setProperty('--y', `${y}px`);
-            
+
             // Tamaño aleatorio
             heart.style.fontSize = `${10 + Math.random() * 15}px`;
-            
+
             // Añadir al body
             document.body.appendChild(heart);
-            
+
             // Remover después de que termine la animación
             setTimeout(() => {
                 heart.remove();
