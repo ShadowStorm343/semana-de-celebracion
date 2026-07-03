@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '4': {
             title: 'El Brillo de tus Ojos ✨',
             date: 'Un suspiro de amor',
-            body: '<p>Mi amor precioso, hoy jueves quiero recordarte lo increíble que eres y cómo tu sola presencia transforma mi vida. Tienes una magia especial en la mirada, una chispa que ilumina mis peores días y me da la fuerza que necesito.</p><p>Me siento tan afortunado de tener a la chica más hermosa de todo el Perú a mi lado. Eres inteligente, dedicada en tu trabajo y en la universidad, y tu determinación me inspira cada día más.</p><p>Ya estamos a nada de tu gran día especial y mi corazón late de emoción por todo lo que te espera. Te amo muchísimo, corazón de melón. 💕</p><p class="bible-quote">Cantares 4:7: "Toda tú eres hermosa, amiga mía, y en ti no hay mancha".</p>'
+            body: '<p>Mi Cielito preciosa, hoy jueves quiero recordarte lo increíble que eres y cómo tu sola presencia transforma mi vida. Tienes una magia especial en la mirada, una chispa que ilumina mis días y me da la fuerza que necesito.</p><p>Me siento tan afortunado de tener a la chica más hermosa de todo el Perú a mi lado. Eres inteligente, dedicada en tu trabajo y en la universidad, y tu determinación me inspira cada día más.</p><p>Ya estamos a nada de tu gran día especial y mi corazón late de emoción por todo lo que te espera. Te quiero muchísimo, corazón de melón. 💕</p><p class="bible-quote">Cantares 4:7: "Toda tú eres bella, amada mía; no hay en ti defecto alguno".</p>'
         },
         '5': {
             title: 'La Víspera de tu Día 🌟',
