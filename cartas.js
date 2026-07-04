@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '5': {
             title: 'La Víspera de tu Día 🌟',
             date: '¡Mañana es el gran día!',
-            body: '<p>¡Llegó el viernes de expectación, mi reina! Mañana es tu cumpleaños, el 4 de julio, y no puedo contener la emoción de celebrar tu vida.</p><p>Quiero que sepas que me siento inmensamente orgulloso de ti. Eres la persona más maravillosa que conozco. Que este nuevo año de vida que estás por comenzar esté colmado de risas, éxitos en tu universidad, paz y muchísimo amor. Prometo estar siempre a tu lado para cuidarte, apoyarte y hacerte la mujer más feliz del mundo.</p><p>Prepárate, porque la sorpresa final está lista... ¡Es hora de celebrar en grande! Eres mi todo. ❤️✨</p><p class="bible-quote">Números 6:24-26: "Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz".</p>'
+            body: '<p>¡Llegó el viernes de expectación, mi reina! Mañana es tu cumpleaños, el 4 de julio, y no puedo contener la emoción de celebrar tu vida.</p><p>Quiero que sepas que me siento inmensamente orgulloso de ti. Eres la persona más maravillosa que conozco. Que este nuevo año de vida que estás por comenzar esté colmado de risas, éxitos en el trabajo, paz y muchísimo amor. Después de meses vuelvo a hacer una promesa: Prometo estar siempre a tu lado para cuidarte, apoyarte y hacerte la mujer más feliz del mundo.</p><p>Prepárate, porque la sorpresa final está lista... ¡Es hora de celebrar en grande! Eres mi todo. ❤️✨</p><p class="bible-quote">Números 6:24-26: "Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz".</p>'
         }
     };
 
@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.addEventListener('click', initAudio);
 
-    // Reducir el volumen al 15% para que sea suave de fondo
+    // Ajustar el volumen al 50% de fondo
     if (bgMusic) {
-        bgMusic.volume = 0.25;
+        bgMusic.volume = 0.50;
     }
 
     // Botón flotante para pausar/reproducir

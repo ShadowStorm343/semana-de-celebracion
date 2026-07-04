@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicToggle = document.getElementById('music-toggle');
     let isMusicPlaying = false;
 
-    // Ajustar el volumen por defecto al 15% para que sea suave de fondo
+    // Ajustar el volumen por defecto al 50% de fondo
     if (bgMusic) {
-        bgMusic.volume = 0.15;
+        bgMusic.volume = 0.50;
     }
 
     // Lógica para soplar las velas (clic en el pastel/velas)
