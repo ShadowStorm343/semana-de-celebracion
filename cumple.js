@@ -10,17 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const bgMusic = document.getElementById('bg-music');
     const musicToggle = document.getElementById('music-toggle');
     let isMusicPlaying = false;
+    let hasInteracted = false;
 
     // Ajustar el volumen por defecto al 50% de fondo
     if (bgMusic) {
         bgMusic.volume = 0.50;
     }
 
+    // Intentar reproducir música automáticamente al cargar la página
+    playMusic();
+
+    // Activar al primer clic en cualquier lugar si el navegador bloqueó el autoplay
+    const initAudio = () => {
+        if (!hasInteracted) {
+            hasInteracted = true;
+            playMusic();
+            document.removeEventListener('click', initAudio);
+        }
+    };
+    document.addEventListener('click', initAudio);
+
     // Lógica para soplar las velas (clic en el pastel/velas)
     if (cakeInteractive) {
         cakeInteractive.addEventListener('click', () => {
             // Si ya se soplaron, no hacer nada
             if (candles[0].classList.contains('blown-out')) return;
+
+            // Marcar que ya hubo interacción y limpiar el listener de autoplay
+            hasInteracted = true;
+            document.removeEventListener('click', initAudio);
 
             // Apagar las velas
             candles.forEach(candle => {
@@ -76,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (musicToggle && bgMusic) {
         musicToggle.addEventListener('click', (e) => {
             e.stopPropagation(); // Evitar que voltee la carta si se hace clic en la música
+            
+            hasInteracted = true;
+            document.removeEventListener('click', initAudio);
             
             if (bgMusic.paused) {
                 playMusic();
